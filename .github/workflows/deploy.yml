@@ -17,4 +17,4 @@ jobs:
             cd intercept/
             git fetch
             git reset --hard origin/master
-            rerun 'ruby intercept.rb'
+            rerun 'rackup'
