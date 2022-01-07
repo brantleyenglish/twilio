@@ -17,5 +17,4 @@ jobs:
             cd intercept/
             git fetch
             git reset --hard origin/master
-            bundle install
-            rerun 'rackup'
+            git status
