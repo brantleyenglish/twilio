@@ -7,7 +7,6 @@ jobs:
   depoly:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ secrets.HOST }} ${{ secrets.USER }} ${{ secrets.KEY }}"
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.4
         with:
@@ -18,5 +17,7 @@ jobs:
             cd intercept/
             git fetch
             git reset --hard origin/master
+            rvm use ruby-3.0.0
+            ruby -v
             bundle install
             rerun 'rackup'
